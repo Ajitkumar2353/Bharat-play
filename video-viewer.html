@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Video Player</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  background:#000;
+}
+.top{
+  background:#e53935;
+  color:white;
+  padding:10px;
+}
+.top a{
+  color:white;
+  text-decoration:none;
+}
+iframe{
+  width:100%;
+  height:calc(100vh - 50px);
+  border:none;
+}
+</style>
+</head>
+
+<body>
+
+<div class="top">
+  <a href="video-index.html">⬅ Back</a>
+</div>
+
+<iframe id="videoFrame" allowfullscreen></iframe>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const id = params.get("id");
+
+if(id){
+  document.getElementById("videoFrame").src =
+    "https://www.youtube.com/embed/" + id;
+}else{
+  document.body.innerHTML = "Video not found";
+}
+</script>
+
+</body>
+</html>
