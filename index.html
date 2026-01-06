@@ -2,65 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Odisha Video Library</title>
+<title>Drive Video Library</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{
-  margin:0;
-  font-family: Arial, sans-serif;
-  background:#f2f4f8;
-}
-header{
-  background:#e53935;
-  color:white;
-  text-align:center;
-  padding:15px;
-}
-header input{
-  width:90%;
-  max-width:400px;
-  padding:10px;
-  border:none;
-  border-radius:5px;
-  margin-top:10px;
-  font-size:16px;
-}
-.video-container{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-  gap:15px;
-  padding:15px;
-}
-.video-card{
-  background:white;
-  border-radius:8px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.15);
-  text-align:center;
-}
-.video-card a{
-  display:block;
-  padding:10px;
-  text-decoration:none;
-  color:black;
-}
-.video-card img{
-  width:100%;
-  height:200px;
-  object-fit:cover;
-  border-radius:5px;
-}
-.video-card h3{
-  font-size:14px;
-  margin:10px 0 0;
-}
+body{margin:0;font-family:Arial;background:#f2f4f8;}
+header{background:#0f9d58;color:#fff;text-align:center;padding:15px;}
+header input{width:90%;max-width:400px;padding:10px;border:none;border-radius:5px;margin-top:10px;}
+.video-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:15px;padding:15px;}
+.video-card{background:#fff;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15);}
+.video-card a{display:block;padding:10px;text-decoration:none;color:#000;text-align:center;}
+.video-card img{width:100%;height:200px;object-fit:cover;border-radius:5px;}
+.video-card h3{font-size:14px;margin:10px 0 0;}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h2>🎬 Odisha Video Library</h2>
+  <h2>🎥 Drive Video Library</h2>
   <input type="text" id="searchInput" placeholder="Search">
 </header>
 
@@ -68,8 +28,8 @@ header input{
 
   <!-- VIDEO 1 -->
   <div class="video-card">
-    <a href="video-viewer.html?id=0ta7iWRN-88">
-      <img src="https://img.youtube.com/vi/0ta7iWRN-88/hqdefault.jpg">
+    <a href="1vWYc2WUOztDaqArW3pzT8UP9m1mv7DjK">
+      <img src="images/video1.png" alt="Video Thumbnail">
       <h3>Computer Basics Video</h3>
     </a>
   </div>
@@ -77,14 +37,12 @@ header input{
 </div>
 
 <script>
-const searchInput = document.getElementById("searchInput");
-const videos = document.querySelectorAll(".video-card");
-
-searchInput.addEventListener("keyup", () => {
-  let value = searchInput.value.toLowerCase();
-  videos.forEach(video => {
-    video.style.display = video.innerText.toLowerCase().includes(value)
-      ? "block" : "none";
+const s=document.getElementById("searchInput");
+const v=document.querySelectorAll(".video-card");
+s.addEventListener("keyup",()=>{
+  let val=s.value.toLowerCase();
+  v.forEach(x=>{
+    x.style.display=x.innerText.toLowerCase().includes(val)?"block":"none";
   });
 });
 </script>
