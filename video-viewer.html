@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,44 +7,29 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{
-  margin:0;
-  background:#000;
-}
-.top{
-  background:#e53935;
-  color:white;
-  padding:10px;
-}
-.top a{
-  color:white;
-  text-decoration:none;
-}
-iframe{
-  width:100%;
-  height:calc(100vh - 50px);
-  border:none;
-}
+body{margin:0;background:#000;}
+.top{background:#0f9d58;color:#fff;padding:10px;}
+.top a{color:#fff;text-decoration:none;}
+iframe{width:100%;height:calc(100vh - 50px);border:none;}
 </style>
 </head>
 
 <body>
 
 <div class="top">
-  <a href="video-index.html">⬅ Back</a>
+  <a href="index.html">⬅ Back</a>
 </div>
 
 <iframe id="videoFrame" allowfullscreen></iframe>
 
 <script>
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
-
+const p=new URLSearchParams(window.location.search);
+const id=p.get("id");
 if(id){
   document.getElementById("videoFrame").src =
-    "https://www.youtube.com/embed/" + id;
+    "https://drive.google.com/file/d/"+id+"/preview";
 }else{
-  document.body.innerHTML = "Video not found";
+  document.body.innerHTML="Video not found";
 }
 </script>
 
