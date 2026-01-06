@@ -6,21 +6,61 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{margin:0;font-family:Arial;background:#f2f4f8;}
-header{background:#0f9d58;color:#fff;text-align:center;padding:15px;}
-header input{width:90%;max-width:400px;padding:10px;border:none;border-radius:5px;margin-top:10px;}
-.video-container{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:15px;padding:15px;}
-.video-card{background:#fff;border-radius:8px;box-shadow:0 2px 6px rgba(0,0,0,.15);}
-.video-card a{display:block;padding:10px;text-decoration:none;color:#000;text-align:center;}
-.video-card img{width:100%;height:200px;object-fit:cover;border-radius:5px;}
-.video-card h3{font-size:14px;margin:10px 0 0;}
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f2f4f8;
+}
+header{
+  background:#0f9d58;
+  color:#fff;
+  text-align:center;
+  padding:15px;
+}
+header input{
+  width:90%;
+  max-width:400px;
+  padding:10px;
+  border:none;
+  border-radius:5px;
+  margin-top:10px;
+  font-size:16px;
+}
+.video-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:15px;
+  padding:15px;
+}
+.video-card{
+  background:#fff;
+  border-radius:8px;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+.video-card a{
+  display:block;
+  padding:10px;
+  text-decoration:none;
+  color:#000;
+  text-align:center;
+}
+.video-card img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  border-radius:5px;
+}
+.video-card h3{
+  font-size:14px;
+  margin:10px 0 0;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h2>🎥Bharat-play</h2>
+  <h2>🎥 Bharat-play</h2>
   <input type="text" id="searchInput" placeholder="Search">
 </header>
 
@@ -28,21 +68,24 @@ header input{width:90%;max-width:400px;padding:10px;border:none;border-radius:5p
 
   <!-- VIDEO 1 -->
   <div class="video-card">
-    <a href="video-viewer.html?id=1vWYc2WUOztDaqArW3pzT8UP9m1mv7DjK">
-      <img src="images/video1.png" alt="Video Thumbnail">
-      <h3>vashtu class</h3>
+    <a href="video-viewer.html?id=11MSMOMzby04X-EsDOOoqWLkENXkTY9l0">
+      <img src="MV5BOWY4MzlmNjItZGYzMS00ZDVhLWI2ZDMtNWEwZTBiMmU0YzQ4XkEyXkFqcGc@._V1_.jpg"
+           alt="Vastu Class">
+      <h3>Charlie 777 movie Hindi</h3>
     </a>
   </div>
 
 </div>
 
 <script>
-const s=document.getElementById("searchInput");
-const v=document.querySelectorAll(".video-card");
-s.addEventListener("keyup",()=>{
-  let val=s.value.toLowerCase();
+const s = document.getElementById("searchInput");
+const v = document.querySelectorAll(".video-card");
+
+s.addEventListener("keyup", ()=>{
+  let val = s.value.toLowerCase();
   v.forEach(x=>{
-    x.style.display=x.innerText.toLowerCase().includes(val)?"block":"none";
+    x.style.display = x.innerText.toLowerCase().includes(val)
+      ? "block" : "none";
   });
 });
 </script>
